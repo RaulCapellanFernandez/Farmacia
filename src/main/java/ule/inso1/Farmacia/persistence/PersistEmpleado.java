@@ -15,7 +15,7 @@ public class PersistEmpleado {
 	
 	public void save(Empleado empleado) {
 		try{
-			emf = Persistence.createEntityManagerFactory("p-peluqueria");
+			emf = Persistence.createEntityManagerFactory("p-farmacia");
 			em = emf.createEntityManager();
 			tx = em.getTransaction();
 			tx.begin();
@@ -33,7 +33,7 @@ public class PersistEmpleado {
 	
 	public void remove(Empleado empleado) {
 		try{
-			emf = Persistence.createEntityManagerFactory("p-peluqueria");
+			emf = Persistence.createEntityManagerFactory("p-farmacia");
 			em = emf.createEntityManager();
 			tx = em.getTransaction();
 			tx.begin();
@@ -52,7 +52,7 @@ public class PersistEmpleado {
 	
 	public void update(Empleado empleado) {
 		try{
-			emf = Persistence.createEntityManagerFactory("p-peluqueria");
+			emf = Persistence.createEntityManagerFactory("p-farmacia");
 			em = emf.createEntityManager();
 			tx = em.getTransaction();
 			tx.begin();
