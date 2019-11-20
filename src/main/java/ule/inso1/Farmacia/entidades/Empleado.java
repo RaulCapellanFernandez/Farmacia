@@ -61,7 +61,7 @@ public class Empleado {
 		this.fechaContra = fechaContra;
 	}
 
-	public Integer isAdmin() {
+	public Integer getAdmin() {
 		return admin;
 	}
 
