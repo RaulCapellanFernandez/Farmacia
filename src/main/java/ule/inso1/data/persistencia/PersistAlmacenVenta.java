@@ -1,26 +1,26 @@
-package ule.inso1.Farmacia.persistence;
+package ule.inso1.data.persistencia;
 
 import javax.persistence.EntityManager;
 import javax.persistence.EntityManagerFactory;
 import javax.persistence.EntityTransaction;
 import javax.persistence.Persistence;
 
-import ule.inso1.Farmacia.entidades.Almacen;
+import ule.inso1.data.entidades.VentaAlmacen;
 
-public class PersistAlmacen {
+public class PersistAlmacenVenta {
 
 	EntityManagerFactory emf = null;
 	EntityManager em = null;
 	EntityTransaction tx = null;
 	
-	public void save(Almacen almacen) {
+	public void save(VentaAlmacen ventaAlmacen) {
 		try{
 			emf = Persistence.createEntityManagerFactory("p-farmacia");
 			em = emf.createEntityManager();
 			tx = em.getTransaction();
 			tx.begin();
 			
-			em.persist(almacen);
+			em.persist(ventaAlmacen);
 			
 			tx.commit();		
 		}catch(Exception e){
@@ -31,14 +31,14 @@ public class PersistAlmacen {
 		}
 	}
 	
-	public void remove(Almacen almacen) {
+	public void remove(VentaAlmacen ventaAlmacen) {
 		try{
 			emf = Persistence.createEntityManagerFactory("p-farmacia");
 			em = emf.createEntityManager();
 			tx = em.getTransaction();
 			tx.begin();
 			
-			Almacen borrar = em.find(Almacen.class, almacen.getIdAlmacen());
+			VentaAlmacen borrar = em.find(VentaAlmacen.class, ventaAlmacen.getIdVentaAlmacen());
 			em.remove(borrar);
 			
 			tx.commit();		
@@ -50,17 +50,17 @@ public class PersistAlmacen {
 		}
 	}
 	
-	public void update(Almacen almacen) {
+	public void update(VentaAlmacen ventaAlmacen) {
 		try{
 			emf = Persistence.createEntityManagerFactory("p-farmacia");
 			em = emf.createEntityManager();
 			tx = em.getTransaction();
 			tx.begin();
 			
-			Almacen actualizar = em.find(Almacen.class, almacen.getIdAlmacen());
+			VentaAlmacen actualizar = em.find(VentaAlmacen.class, ventaAlmacen.getIdVentaAlmacen());
 			
-			actualizar.setNombre(almacen.getNombre());
-			actualizar.setCantidad(almacen.getCantidad());
+			actualizar.setAlmacen(ventaAlmacen.getAlmacen());
+			actualizar.setVenta(ventaAlmacen.getVenta());
 			
 			tx.commit();		
 		}catch(Exception e){

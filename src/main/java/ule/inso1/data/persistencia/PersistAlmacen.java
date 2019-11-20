@@ -1,26 +1,26 @@
-package ule.inso1.Farmacia.persistence;
+package ule.inso1.data.persistencia;
 
 import javax.persistence.EntityManager;
 import javax.persistence.EntityManagerFactory;
 import javax.persistence.EntityTransaction;
 import javax.persistence.Persistence;
 
-import ule.inso1.Farmacia.entidades.Empleado;
+import ule.inso1.data.entidades.Almacen;
 
-public class PersistEmpleado {
-	
+public class PersistAlmacen {
+
 	EntityManagerFactory emf = null;
 	EntityManager em = null;
 	EntityTransaction tx = null;
 	
-	public void save(Empleado empleado) {
+	public void save(Almacen almacen) {
 		try{
 			emf = Persistence.createEntityManagerFactory("p-farmacia");
 			em = emf.createEntityManager();
 			tx = em.getTransaction();
 			tx.begin();
 			
-			em.persist(empleado);
+			em.persist(almacen);
 			
 			tx.commit();		
 		}catch(Exception e){
@@ -31,14 +31,14 @@ public class PersistEmpleado {
 		}
 	}
 	
-	public void remove(Empleado empleado) {
+	public void remove(Almacen almacen) {
 		try{
 			emf = Persistence.createEntityManagerFactory("p-farmacia");
 			em = emf.createEntityManager();
 			tx = em.getTransaction();
 			tx.begin();
 			
-			Empleado borrar = em.find(Empleado.class, empleado.getDni());
+			Almacen borrar = em.find(Almacen.class, almacen.getIdAlmacen());
 			em.remove(borrar);
 			
 			tx.commit();		
@@ -50,19 +50,17 @@ public class PersistEmpleado {
 		}
 	}
 	
-	public void update(Empleado empleado) {
+	public void update(Almacen almacen) {
 		try{
 			emf = Persistence.createEntityManagerFactory("p-farmacia");
 			em = emf.createEntityManager();
 			tx = em.getTransaction();
 			tx.begin();
 			
-			Empleado actualizar = em.find(Empleado.class, empleado.getDni());
+			Almacen actualizar = em.find(Almacen.class, almacen.getIdAlmacen());
 			
-			actualizar.setNombre(empleado.getNombre());
-			actualizar.setContrasenia(empleado.getContrasenia());
-			actualizar.setFechaContra(empleado.getFechaContra());
-			actualizar.setAdmin(empleado.getAdmin());
+			actualizar.setNombre(almacen.getNombre());
+			actualizar.setCantidad(almacen.getCantidad());
 			
 			tx.commit();		
 		}catch(Exception e){

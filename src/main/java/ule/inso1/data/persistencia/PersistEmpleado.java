@@ -1,26 +1,26 @@
-package ule.inso1.Farmacia.persistence;
+package ule.inso1.data.persistencia;
 
 import javax.persistence.EntityManager;
 import javax.persistence.EntityManagerFactory;
 import javax.persistence.EntityTransaction;
 import javax.persistence.Persistence;
 
-import ule.inso1.Farmacia.entidades.Venta;
+import ule.inso1.data.entidades.Empleado;
 
-public class PersistVenta {
-
+public class PersistEmpleado {
+	
 	EntityManagerFactory emf = null;
 	EntityManager em = null;
 	EntityTransaction tx = null;
 	
-	public void save(Venta venta) {
+	public void save(Empleado empleado) {
 		try{
 			emf = Persistence.createEntityManagerFactory("p-farmacia");
 			em = emf.createEntityManager();
 			tx = em.getTransaction();
 			tx.begin();
 			
-			em.persist(venta);
+			em.persist(empleado);
 			
 			tx.commit();		
 		}catch(Exception e){
@@ -31,14 +31,14 @@ public class PersistVenta {
 		}
 	}
 	
-	public void remove(Venta venta) {
+	public void remove(Empleado empleado) {
 		try{
 			emf = Persistence.createEntityManagerFactory("p-farmacia");
 			em = emf.createEntityManager();
 			tx = em.getTransaction();
 			tx.begin();
 			
-			Venta borrar = em.find(Venta.class, venta.getIdVenta());
+			Empleado borrar = em.find(Empleado.class, empleado.getDni());
 			em.remove(borrar);
 			
 			tx.commit();		
@@ -50,18 +50,19 @@ public class PersistVenta {
 		}
 	}
 	
-	public void update(Venta venta) {
+	public void update(Empleado empleado) {
 		try{
 			emf = Persistence.createEntityManagerFactory("p-farmacia");
 			em = emf.createEntityManager();
 			tx = em.getTransaction();
 			tx.begin();
 			
-			Venta actualizar = em.find(Venta.class, venta.getIdVenta());
+			Empleado actualizar = em.find(Empleado.class, empleado.getDni());
 			
-			actualizar.setTotalVenta(venta.getTotalVenta());
-			actualizar.setFechaVenta(venta.getFechaVenta());
-			actualizar.setIdEmpleadoVenta(venta.getIdEmpleadoVenta());
+			actualizar.setNombre(empleado.getNombre());
+			actualizar.setContrasenia(empleado.getContrasenia());
+			actualizar.setFechaContra(empleado.getFechaContra());
+			actualizar.setAdmin(empleado.getAdmin());
 			
 			tx.commit();		
 		}catch(Exception e){

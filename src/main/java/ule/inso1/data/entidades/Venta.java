@@ -1,10 +1,12 @@
-package ule.inso1.Farmacia.entidades;
+package ule.inso1.data.entidades;
 
 import java.util.Date;
 
 import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.Id;
+import javax.persistence.JoinColumn;
+import javax.persistence.ManyToOne;
 import javax.persistence.Table;
 @Entity
 @Table(name = "VENTAS")
@@ -19,8 +21,9 @@ public class Venta {
 	@Column(name = "FECHA_VENTA")
 	private Date fechaVenta;
 	
-	@Column(name = "DNI")
-	private String idEmpleadoVenta;
+	@ManyToOne
+	@JoinColumn(name = "DNI")
+	private Empleado empleado;
 
 	//Getters y setters generados automaticamente
 	public Integer getIdVenta() {
@@ -47,12 +50,12 @@ public class Venta {
 		this.fechaVenta = fechaVenta;
 	}
 
-	public String getIdEmpleadoVenta() {
-		return idEmpleadoVenta;
+	public Empleado getEmpleado() {
+		return empleado;
 	}
 
-	public void setIdEmpleadoVenta(String idEmpleadoVenta) {
-		this.idEmpleadoVenta = idEmpleadoVenta;
+	public void setEmpleado(Empleado empleado) {
+		this.empleado = empleado;
 	}
-	
+
 }

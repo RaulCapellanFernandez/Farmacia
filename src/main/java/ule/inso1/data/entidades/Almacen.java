@@ -1,4 +1,4 @@
-package ule.inso1.Farmacia.entidades;
+package ule.inso1.data.entidades;
 
 import javax.persistence.Column;
 import javax.persistence.Entity;

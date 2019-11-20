@@ -1,8 +1,10 @@
-  package ule.inso1.Farmacia.entidades;
+package ule.inso1.data.entidades;
 
 import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.Id;
+import javax.persistence.JoinColumn;
+import javax.persistence.ManyToOne;
 import javax.persistence.Table;
 
 @Entity
@@ -13,11 +15,13 @@ public class VentaAlmacen {
 	@Column(name = "ID_ALMACENVENTA")
 	private Integer idVentaAlmacen;
 	
-	@Column(name = "ID_ALMACEN")
-	private Integer idAlmacen;
+	@ManyToOne
+	@JoinColumn(name = "ID_ALMACEN")
+	private Almacen almacen;
 	
-	@Column(name = "ID_VENTA")
-	private Integer idVenta;
+	@ManyToOne
+	@JoinColumn(name = "ID_VENTA")
+	private Venta venta;
 
 	//Getters y setters generados automaticamente
 	public Integer getIdVentaAlmacen() {
@@ -28,21 +32,20 @@ public class VentaAlmacen {
 		this.idVentaAlmacen = idVentaAlmacen;
 	}
 
-	public Integer getIdAlmacen() {
-		return idAlmacen;
+	public Almacen getAlmacen() {
+		return almacen;
 	}
 
-	public void setIdAlmacen(Integer idAlmacen) {
-		this.idAlmacen = idAlmacen;
+	public void setAlmacen(Almacen almacen) {
+		this.almacen = almacen;
 	}
 
-	public Integer getIdVenta() {
-		return idVenta;
+	public Venta getVenta() {
+		return venta;
 	}
 
-	public void setIdVenta(Integer idVenta) {
-		this.idVenta = idVenta;
-	}
-	
+	public void setVenta(Venta venta) {
+		this.venta = venta;
+	}	
 	
 }

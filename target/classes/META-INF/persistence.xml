@@ -5,12 +5,15 @@
 	<persistence-unit name="p-farmacia">
 		<provider>org.hibernate.ejb.HibernatePersistence</provider>
 		
-		<class>es.peluqueria.entidades.Empleados</class>
+		<class>ule.inso1.data.entidades.Empleado</class>
+		<class>ule.inso1.data.entidades.Almacen</class>
+		<class>ule.inso1.data.entidades.Venta</class>
+		<class>ule.inso1.data.entidades.VentaAlmacen</class>
 		
 		<properties>
 			<property name="javax.persistence.jdbc.user" value="root"/>
 			<property name="javax.persistence.jdbc.password" value="hola"/>
-			<property name="javax.persistence.jdbc.url" value="jdbc:mysql://localhost:3306/peluqueria"/>
+			<property name="javax.persistence.jdbc.url" value="jdbc:mysql://localhost:3306/farmacia"/>
 			<property name="javax.persistence.jdbc.driver" value="com.mysql.jdbc.Driver"/>
 			
 			<property name="hibernate.dialect" value="org.hibernate.dialect.MySQLInnoDBDialect"/>
