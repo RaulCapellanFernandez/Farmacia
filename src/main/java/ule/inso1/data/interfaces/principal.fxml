@@ -82,15 +82,15 @@
                   </HBox>
                   <FlowPane layoutY="311.0" prefHeight="53.0" prefWidth="800.0">
                      <children>
-                        <TextField fx:id="AlmaIDprod" prefHeight="27.0" prefWidth="87.0" promptText="IDprod" text="" />
-                        <TextField fx:id="AlmaNombre" layoutX="10.0" layoutY="10.0" prefHeight="27.0" prefWidth="189.0" promptText="Nombre" text="" />
-                        <TextField fx:id="AlmaCantidad" layoutX="10.0" layoutY="10.0" prefHeight="27.0" prefWidth="117.0" promptText="Cantidad" text="" />
-                        <TextField fx:id="AlmaDetalles" layoutX="10.0" layoutY="10.0" prefHeight="27.0" prefWidth="407.0" promptText="Detalles" text="" />
+                        <TextField fx:id="IDprodAlma" prefHeight="27.0" prefWidth="87.0" promptText="IDprod" text="" />
+                        <TextField fx:id="nombreAlma" layoutX="10.0" layoutY="10.0" prefHeight="27.0" prefWidth="189.0" promptText="Nombre" text="" />
+                        <TextField fx:id="cantidadAlma" layoutX="10.0" layoutY="10.0" prefHeight="27.0" prefWidth="117.0" promptText="Cantidad" text="" />
+                        <TextField fx:id="detallesAlma" layoutX="10.0" layoutY="10.0" prefHeight="27.0" prefWidth="407.0" promptText="Detalles" text="" />
                         <FlowPane prefHeight="79.0" prefWidth="800.0">
                            <children>
-                              <Button mnemonicParsing="false" onAction="#onAddClicked" prefHeight="27.0" prefWidth="186.0" styleClass="botonAnyadir" stylesheets="@estilo.css" text="Añadir" />
-                              <Button mnemonicParsing="false" onAction="#onAddClicked" prefHeight="27.0" prefWidth="164.0" styleClass="botoBorrar" stylesheets="@estilo.css" text="Borrar" />
-                              <Button layoutX="617.0" layoutY="10.0" mnemonicParsing="false" onAction="#onAddClicked" prefHeight="27.0" prefWidth="195.0" styleClass="botonModificar" stylesheets="@estilo.css" text="Modificar" />
+                              <Button fx:id="añadirAlma" mnemonicParsing="false" onAction="#onAddClicked" prefHeight="27.0" prefWidth="186.0" styleClass="botonAnyadir" stylesheets="@estilo.css" text="Añadir" />
+                              <Button fx:id="borrarAlma" mnemonicParsing="false" onAction="#onAddClicked" prefHeight="27.0" prefWidth="164.0" styleClass="botoBorrar" stylesheets="@estilo.css" text="Borrar" />
+                              <Button fx:id="modificarAlma" layoutX="617.0" layoutY="10.0" mnemonicParsing="false" onAction="#onAddClicked" prefHeight="27.0" prefWidth="195.0" styleClass="botonModificar" stylesheets="@estilo.css" text="Modificar" />
                            </children>
                         </FlowPane>
                      </children>
@@ -117,15 +117,16 @@
                   </HBox>
                   <FlowPane layoutY="311.0" prefHeight="53.0" prefWidth="800.0">
                      <children>
-                        <TextField fx:id="RegEmpDNI11" prefHeight="27.0" prefWidth="107.0" promptText="DNI" text="" />
-                        <TextField fx:id="RegEmpNombre11" layoutX="10.0" layoutY="10.0" prefHeight="27.0" prefWidth="159.0" promptText="Nombre" text="" />
-                        <TextField fx:id="RegEmpApellidos11" layoutX="10.0" layoutY="10.0" prefHeight="27.0" prefWidth="226.0" promptText="Apellidos" text="" />
-                        <TextField fx:id="RegEmpContraseña11" layoutX="10.0" layoutY="10.0" prefHeight="27.0" prefWidth="152.0" promptText="Contraseña" text="" />
+                        <TextField fx:id="DNIRegEmple" prefHeight="27.0" prefWidth="107.0" promptText="DNI" text="" />
+                        <TextField fx:id="nombreRegEmple" layoutX="10.0" layoutY="10.0" prefHeight="27.0" prefWidth="159.0" promptText="Nombre" text="" />
+                        <TextField fx:id="apellidosRegEmple" layoutX="10.0" layoutY="10.0" prefHeight="27.0" prefWidth="226.0" promptText="Apellidos" text="" />
+                        <TextField fx:id="contraseñaRegEmple" layoutX="502.0" layoutY="10.0" prefHeight="27.0" prefWidth="152.0" promptText="Contraseña" text="" />
+                        <TextField fx:id="fechaContratacionRegEmple" layoutX="10.0" layoutY="10.0" prefHeight="27.0" prefWidth="152.0" promptText="Fecha Contratación" text="" />
                         <FlowPane prefHeight="79.0" prefWidth="800.0">
                            <children>
-                              <Button mnemonicParsing="false" onAction="#onAddClicked" prefHeight="27.0" prefWidth="186.0" styleClass="botonAnyadir" stylesheets="@estilo.css" text="Añadir" />
-                              <Button mnemonicParsing="false" onAction="#onAddClicked" prefHeight="27.0" prefWidth="164.0" styleClass="botoBorrar" stylesheets="@estilo.css" text="Borrar" />
-                              <Button layoutX="617.0" layoutY="10.0" mnemonicParsing="false" onAction="#onAddClicked" prefHeight="27.0" prefWidth="195.0" styleClass="botonModificar" stylesheets="@estilo.css" text="Modificar" />
+                              <Button fx:id="añadirRegEmple" mnemonicParsing="false" onAction="#onAddClicked" prefHeight="27.0" prefWidth="186.0" styleClass="botonAnyadir" stylesheets="@estilo.css" text="Añadir" />
+                              <Button fx:id="borrarRegEmple" mnemonicParsing="false" onAction="#onAddClicked" prefHeight="27.0" prefWidth="164.0" styleClass="botoBorrar" stylesheets="@estilo.css" text="Borrar" />
+                              <Button fx:id="modificarRegEmple" layoutX="617.0" layoutY="10.0" mnemonicParsing="false" onAction="#onAddClicked" prefHeight="27.0" prefWidth="195.0" styleClass="botonModificar" stylesheets="@estilo.css" text="Modificar" />
                            </children>
                         </FlowPane>
                      </children>
