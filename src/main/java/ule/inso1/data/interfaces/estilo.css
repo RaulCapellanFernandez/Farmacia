@@ -1,0 +1,53 @@
+/* JavaFX CSS - Leave this comment until you have at least create one rule which uses -fx-Property */
+
+* {
+	-fx-verde: #3EDB72;
+	-fx-naranjaLog: #F0831C;
+	-fx-blanco:#f8f7f7;
+    -fx-rojo : #e72222;
+}
+
+
+
+/************************estilos del login ********************/
+.princLog{
+	 -fx-background-color: #171212;
+}
+.login{
+	-fx-background-color: -fx-verde;
+}
+.botonLogin{
+	-fx-background-color: -fx-naranjaLog;
+	
+}
+.escrituralog{
+	-jfx-unfocus-color: #ead88d;
+}
+.SingIn{
+	-fx-text-fill:-fx-blanco;
+}
+.close{
+	-fx-text-fill: -fx-rojo;
+}
+
+
+/******************estilos de principal *********************/
+.venta{
+	-fx-background-color: -fx-verde;
+}
+.botonAnyadir{
+	-fx-background-color: #26b240;
+}
+.botoBorrar{
+	-fx-background-color:-fx-rojo;
+}
+.botonModificar{
+	-fx-background-color:#e8951a;
+}
+.panelBotonesPrincipa{
+	-fx-background-color:#F9FBF4;
+}
+
+
+
+

@@ -20,7 +20,7 @@ public class LogControlador {
     @FXML
     private JFXPasswordField pasLog;
 
-
+    //cerrar el inico de sesion
     @FXML
     private void handleClose(ActionEvent event) {
        System.exit(0);
