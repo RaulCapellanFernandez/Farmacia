@@ -1,0 +1,133 @@
+* {
+    -fx-primary : #57AB50;
+    -fx-secondary : #FFFF8D;
+    -fx-primarytext : #717171;
+}
+.root{
+    -fx-background-color: white;
+}
+.backgroundPrimary{
+    -fx-background-color: -fx-primary;
+}
+.fieldsLoggin{
+	-fx-text-inner-color: white;
+	-fx-font-size: 15;
+	-fx-background-color: #40843A;
+	-fx-font-family: verdana;
+}
+.labelLoggin{
+	-fx-text-inner-color: -fx-primarytext;
+	-fx-font-size: 18;
+	-fx-font-weight: bold;
+	-fx-font-family: verdana;
+	
+}
+.labelTitleFinal{
+	-fx-text-inner-color: -fx-secondarytext;
+	-fx-font-size: 40;
+	-fx-font-weight: bold;
+	-fx-font-family: verdana;
+	
+}
+
+.ventaProductos{
+	-fx-background-color: #D3FFD0;
+	-fx-text-inner-color: white;
+	-fx-border-color: -fx-primarytext;
+	-fx-font-size: 13;
+	-fx-font-weight: bold;
+	-fx-border-width: 3px;
+	-fx-font-family: verdana;
+	
+}
+
+.table{
+	-fx-background-color: #D3FFD0;
+	-fx-text-inner-color: white;
+	-fx-border-color: -fx-primarytext;
+	-fx-font-size: 13;
+	-fx-font-weight: bold;
+	-fx-border-width: 3px;
+	-fx-font-family: verdana;
+	
+}
+
+.labelTitle{
+	-fx-text-inner-color: white;
+	-fx-font-size: 18;
+	
+	-fx-font-family: verdana;
+	
+}
+.table-view .column-header,
+.table-view .column-header-background .filler {
+    -fx-background-color:  #549764; 
+    -fx-border-color: #054400;
+    -fx-border-width: 3px;
+}
+.table-view .column-header .label{
+   -fx-text-fill: white;
+   -fx-font-weight: bold; 
+   -fx-alignment: CENTER;
+   
+}
+.labelSubTitle{
+	-fx-text-inner-color: white;
+	-fx-font-size: 13;
+	-fx-font-weight: bold;
+	-fx-font-family: verdana;
+	
+}
+.login-button{
+	-fx-background-color: #245FC4;
+	-fx-border-color : white;
+	-fx-font-family: verdana;
+	-fx-border-radius: 30px;
+	-fx-background-radius: 30px;
+	-fx-font-size: 13;
+	
+}
+.login-button:hover{
+	-fx-border-color: -fx-secondary;
+	-fx-background-color: #9A9CA0;
+	
+}
+.login-button:pressed{
+	-fx-font-size:8;
+}
+
+.boton-button{
+	-fx-background-color: #2B8A99;
+	-fx-border-color : -fx-primary;
+	-fx-font-family: verdana;
+	-fx-border-radius: 30px;
+	-fx-background-radius: 30px;
+	-fx-font-size: 13;
+	
+}
+.boton-button:hover{
+	-fx-border-color: -fx-secondary;
+	-fx-background-color: #9A9CA0;
+	
+}
+.boton-button:pressed{
+	-fx-font-size:8;
+}
+
+.atras-button{
+	-fx-background-color: #BB5656;
+	-fx-border-color : -fx-primary;
+	-fx-font-family: verdana;
+	-fx-border-radius: 30px;
+	-fx-background-radius: 30px;
+	-fx-font-size: 13;
+	
+}
+.atras-button:hover{
+	-fx-border-color: -fx-secondary;
+	-fx-background-color: #9A9CA0;
+	
+}
+.atras-button:pressed{
+	-fx-font-size:8;
+}
