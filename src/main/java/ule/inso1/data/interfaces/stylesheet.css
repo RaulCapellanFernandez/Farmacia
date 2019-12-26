@@ -84,7 +84,8 @@
 	-fx-font-family: verdana;
 	-fx-border-radius: 30px;
 	-fx-background-radius: 30px;
-	-fx-font-size: 13;
+	-fx-font-size: 15;
+	-fx-font-weight: bold;
 	
 }
 .login-button:hover{

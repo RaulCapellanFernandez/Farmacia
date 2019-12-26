@@ -25,7 +25,7 @@ public class Empleado {
 	@Column(name = "FECHA_CONTRATACION")
 	private Date fechaContra;
 	
-	@Column(name = "DNI")
+	@Column(name = "ADMIN")
 	private Integer admin;
 
 	//Getters y setters generados automaticamente

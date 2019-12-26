@@ -6,9 +6,7 @@
 		<provider>org.hibernate.ejb.HibernatePersistence</provider>
 		
 		<class>ule.inso1.data.entidades.Empleado</class>
-		<class>ule.inso1.data.entidades.Almacen</class>
-		<class>ule.inso1.data.entidades.Venta</class>
-		<class>ule.inso1.data.entidades.VentaAlmacen</class>
+		
 		
 		<properties>
 			<property name="javax.persistence.jdbc.user" value="root"/>
