@@ -14,7 +14,7 @@ public class Main extends Application {
     
     @Override
     public void start(Stage stage) throws Exception {
-        Parent root = FXMLLoader.load(getClass().getResource("/ule/inso1/data/interfaces/Loggin.fxml"));
+        Parent root = FXMLLoader.load(getClass().getResource("/ule/inso1/data/interfaces/EmpleadoInterfaz.fxml"));
         
         Scene scene = new Scene(root);
         

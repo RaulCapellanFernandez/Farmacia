@@ -29,6 +29,17 @@
 	-fx-font-family: verdana;
 	
 }
+.selected{
+	-fx-background-color: #4D9747;
+	
+}
+.optionsHover{
+	
+}
+.optionsHover:hover{
+	-fx-background-color: #AAAC44;
+	
+}
 
 .ventaProductos{
 	-fx-background-color: #D3FFD0;
@@ -72,12 +83,13 @@
    
 }
 .labelSubTitle{
-	-fx-text-inner-color: white;
-	-fx-font-size: 13;
+	-fx-text-inner-color: #ffffff;
+	-fx-font-size: 20;
 	-fx-font-weight: bold;
 	-fx-font-family: verdana;
 	
 }
+
 .login-button{
 	-fx-background-color: #245FC4;
 	-fx-border-color : white;
@@ -101,6 +113,7 @@
 	-fx-background-color: #2B8A99;
 	-fx-border-color : -fx-primary;
 	-fx-font-family: verdana;
+	 -fx-font-weight: bold; 
 	-fx-border-radius: 30px;
 	-fx-background-radius: 30px;
 	-fx-font-size: 13;
@@ -120,6 +133,8 @@
 	-fx-border-color : -fx-primary;
 	-fx-font-family: verdana;
 	-fx-border-radius: 30px;
+	-fx-font-weight: bold; 
+	
 	-fx-background-radius: 30px;
 	-fx-font-size: 13;
 	
@@ -132,3 +147,50 @@
 .atras-button:pressed{
 	-fx-font-size:8;
 }
+
+.modificar-button{
+	-fx-background-color: #9E6BDC;
+	-fx-border-color : -fx-primary;
+	-fx-font-family: verdana;
+	 -fx-font-weight: bold; 
+	-fx-border-radius: 30px;
+	-fx-background-radius: 30px;
+	-fx-font-size: 13;
+	
+}
+.modificar-button:hover{
+	-fx-border-color: -fx-secondary;
+	-fx-background-color: #9A9CA0;
+	
+}
+.modificar-button:pressed{
+	-fx-font-size:8;
+}
+
+
+.comboBox{
+	-fx-background-color: #AADFB1;
+	-fx-border-color : #02560E;
+}
+
+.textField-Campos{
+	-fx-background-color: #AADFB1;
+	-fx-border-color : #02560E;
+	-fx-font-family: verdana;
+	-fx-font-weight: bold; 
+}
+
+.checkBox .box{
+	-fx-border-color : #02560E;
+	-fx-background-color: #AADFB1;
+	
+}
+.checkBox:selected .box {
+    -fx-background-color: #AADFB1;
+    -fx-border-color : #02560E;
+}
+
+
+
+
+

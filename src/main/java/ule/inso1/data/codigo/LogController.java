@@ -37,7 +37,8 @@ public class LogController {
     		//Para cerrar la ventana
     		Stage stage = (Stage) logButton.getScene().getWindow();
             stage.close();
-    		Parent root1 = FXMLLoader.load(getClass().getResource("/ule/inso1/data/interfaces/RealizarVenta.fxml"));
+            //Abrir nueva ventana
+    		Parent root1 = FXMLLoader.load(getClass().getResource("/ule/inso1/data/interfaces/AlmacenInterfaz.fxml"));
             Scene scene2 = new Scene(root1);
             Stage satage = new Stage();
             satage.setScene(scene2);

@@ -1,0 +1,82 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import java.lang.String?>
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.VBox?>
+
+
+<AnchorPane minHeight="800.0" prefWidth="1000.0" styleClass="root" stylesheets="@stylesheet.css" xmlns:fx="http://javafx.com/fxml/1" xmlns="http://javafx.com/javafx/11.0.1">
+   <children>
+      <VBox layoutX="10.0" layoutY="10.0" prefHeight="800.0" prefWidth="314.0" styleClass="backgroundPrimary">
+         <children>
+            <HBox prefHeight="100.0" prefWidth="200.0">
+               <children>
+                  <Label styleClass="labelTitleFinal" text="Nombre" textFill="WHITE">
+                     <HBox.margin>
+                        <Insets left="20.0" top="20.0" />
+                     </HBox.margin>
+                  </Label>
+               </children>
+               <VBox.margin>
+                  <Insets bottom="50.0" />
+               </VBox.margin>
+            </HBox>
+            <HBox prefHeight="58.0" prefWidth="314.0">
+               <children>
+                  <Label styleClass="labelSubTitle" text="Empleados" textFill="WHITE">
+                     <HBox.margin>
+                        <Insets left="20.0" top="10.0" />
+                     </HBox.margin>
+                  </Label>
+               </children>
+               <VBox.margin>
+                  <Insets bottom="-50.0" />
+               </VBox.margin>
+               <styleClass>
+                  <String fx:value="selected" />
+                  <String fx:value="optionsHover" />
+               </styleClass>
+            </HBox>
+            <HBox prefHeight="52.0" prefWidth="314.0" styleClass="optionsHover">
+               <children>
+                  <Label styleClass="labelSubTitle" text="Almacen" textFill="WHITE">
+                     <HBox.margin>
+                        <Insets left="20.0" top="10.0" />
+                     </HBox.margin>
+                  </Label>
+               </children>
+               <VBox.margin>
+                  <Insets top="55.0" />
+               </VBox.margin>
+            </HBox>
+            <HBox prefHeight="54.0" prefWidth="314.0" styleClass="optionsHover">
+               <children>
+                  <Label styleClass="labelSubTitle" text="Ventas" textFill="WHITE">
+                     <HBox.margin>
+                        <Insets left="20.0" top="10.0" />
+                     </HBox.margin>
+                  </Label>
+               </children>
+               <VBox.margin>
+                  <Insets top="5.0" />
+               </VBox.margin>
+            </HBox>
+            <HBox prefHeight="51.0" prefWidth="314.0" styleClass="optionsHover">
+               <children>
+                  <Label styleClass="labelSubTitle" text="Realizar Venta" textFill="WHITE">
+                     <HBox.margin>
+                        <Insets left="20.0" top="10.0" />
+                     </HBox.margin>
+                  </Label>
+               </children>
+               <VBox.margin>
+                  <Insets top="5.0" />
+               </VBox.margin>
+            </HBox>
+         </children>
+      </VBox>
+   </children>
+</AnchorPane>
