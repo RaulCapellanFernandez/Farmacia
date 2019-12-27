@@ -12,13 +12,11 @@ public class Almacen {
 	@Column(name  = "ID_ALMACEN")
 	private Integer idAlmacen;
 	
-	@Column(name  = "NOMBRE_PRODUCTO")
+	@Column(name  = "NOMBRE_ALMACEN")
 	private String nombre;
 	
 	@Column(name = "CANTIDAD")
 	private Integer cantidad;
-	
-	private String detalles;
 
 	
 	//Getters y setters generados automaticamente
@@ -44,13 +42,5 @@ public class Almacen {
 
 	public void setCantidad(Integer cantidad) {
 		this.cantidad = cantidad;
-	}
-
-	public String getDetalles() {
-		return detalles;
-	}
-
-	public void setDetalles(String detalles) {
-		this.detalles = detalles;
 	}
 }

@@ -170,7 +170,6 @@ public class EmpleadosController implements Initializable{
     	if(! textFieldDNI.getText().isEmpty()) {
 	    	for(int i= 0; i < listaEmpleado.size(); i++) {
 	    		if(listaEmpleado.get(i).getDni().equals(textFieldDNI.getText())) {
-	    			System.out.println("JODEEEEER");
 	    			Alert alert = new Alert(AlertType.ERROR);
 	        		alert.setTitle("Mensaje de error");
 	        		alert.setHeaderText("Error al introducir empleado");
@@ -233,8 +232,15 @@ public class EmpleadosController implements Initializable{
     }
 
     @FXML
-    void clickhBoxVentas(MouseEvent event) {
-
+    void clickhBoxVentas(MouseEvent event) throws IOException {
+    	Stage stage = (Stage) hBoxAlmacen.getScene().getWindow();
+        stage.close();
+        //Abrir nueva ventana
+		Parent root1 = FXMLLoader.load(getClass().getResource("/ule/inso1/data/interfaces/Ventas.fxml"));
+        Scene scene2 = new Scene(root1);
+        Stage satage = new Stage();
+        satage.setScene(scene2);
+        satage.show();
     }
 
     @FXML
