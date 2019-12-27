@@ -10,6 +10,7 @@ import javafx.scene.Scene;
 import javafx.scene.control.Alert;
 import javafx.scene.control.Alert.AlertType;
 import javafx.scene.control.Button;
+import javafx.scene.control.Label;
 import javafx.scene.control.PasswordField;
 import javafx.scene.control.TextField;
 import javafx.scene.input.MouseEvent;
@@ -28,6 +29,7 @@ public class LogController {
     @FXML
     private Button logButton;
 
+
     @FXML
     void clickEntrar(MouseEvent event) throws IOException {
     	boolean estado = compruebaEmpleado();
@@ -38,7 +40,7 @@ public class LogController {
     		Stage stage = (Stage) logButton.getScene().getWindow();
             stage.close();
             //Abrir nueva ventana
-    		Parent root1 = FXMLLoader.load(getClass().getResource("/ule/inso1/data/interfaces/AlmacenInterfaz.fxml"));
+    		Parent root1 = FXMLLoader.load(getClass().getResource("/ule/inso1/data/interfaces/EmpleadoInterfaz.fxml"));
             Scene scene2 = new Scene(root1);
             Stage satage = new Stage();
             satage.setScene(scene2);

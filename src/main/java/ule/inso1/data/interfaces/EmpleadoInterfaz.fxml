@@ -22,12 +22,12 @@
                <children>
                   <HBox prefHeight="100.0" prefWidth="200.0">
                      <children>
-                        <Label styleClass="labelTitleFinal" text="Nombre" textFill="WHITE">
+                        <Label fx:id="idNombre" styleClass="labelTitleFinal" text="Opciones" textFill="WHITE">
                            <HBox.margin>
                               <Insets left="20.0" top="20.0" />
                            </HBox.margin>
                         </Label>
-                        <MaterialDesignIconView fill="WHITE" glyphName="ACCOUNT" size="80">
+                        <MaterialDesignIconView fill="WHITE" glyphName="BOOK" size="80">
                            <HBox.margin>
                               <Insets left="20.0" top="10.0" />
                            </HBox.margin>

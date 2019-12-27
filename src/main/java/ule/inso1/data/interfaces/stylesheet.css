@@ -24,7 +24,8 @@
 }
 .labelTitleFinal{
 	-fx-text-inner-color: -fx-secondarytext;
-	-fx-font-size: 40;
+	-fx-font-size: 35
+	;
 	-fx-font-weight: bold;
 	-fx-font-family: verdana;
 	

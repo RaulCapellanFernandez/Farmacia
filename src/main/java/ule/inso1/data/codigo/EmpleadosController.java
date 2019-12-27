@@ -1,12 +1,16 @@
 package ule.inso1.data.codigo;
 
+import java.io.IOException;
 import java.net.URL;
 import java.util.Date;
 import java.util.List;
 import java.util.ResourceBundle;
 
 import javafx.fxml.FXML;
+import javafx.fxml.FXMLLoader;
 import javafx.fxml.Initializable;
+import javafx.scene.Parent;
+import javafx.scene.Scene;
 import javafx.scene.control.Alert;
 import javafx.scene.control.Button;
 import javafx.scene.control.CheckBox;
@@ -15,6 +19,7 @@ import javafx.scene.control.TextField;
 import javafx.scene.control.Alert.AlertType;
 import javafx.scene.input.MouseEvent;
 import javafx.scene.layout.HBox;
+import javafx.stage.Stage;
 import ule.inso1.data.entidades.Empleado;
 import ule.inso1.data.persistencia.PersistEmpleado;
 
@@ -23,7 +28,6 @@ public class EmpleadosController implements Initializable{
 	public List<Empleado> listaEmpleado;
 	public PersistEmpleado pEmpleado = new PersistEmpleado();
 	
-	@Override
 	public void initialize(URL location, ResourceBundle resources) {
 		
     	listaEmpleado = pEmpleado.recuperar();
@@ -124,7 +128,7 @@ public class EmpleadosController implements Initializable{
     @FXML
     void clickModificar(MouseEvent event) {
     	int j  = 1;
-    	System.out.println("BORRA");
+    	System.out.println("MODIFICA");
     	System.out.println(listaEmpleado.size());
     	
     	if(! textFieldDNI.getText().isEmpty()) {
@@ -160,6 +164,8 @@ public class EmpleadosController implements Initializable{
     @FXML
     void clickNuevo(MouseEvent event) {
     	Empleado empleado = new Empleado();
+    	
+    	System.out.println("NUEVO");
     	
     	if(! textFieldDNI.getText().isEmpty()) {
 	    	for(int i= 0; i < listaEmpleado.size(); i++) {
@@ -210,8 +216,15 @@ public class EmpleadosController implements Initializable{
     }
 
     @FXML
-    void clickhBoxAlmacen(MouseEvent event) {
-
+    void clickhBoxAlmacen(MouseEvent event) throws IOException {
+    	Stage stage = (Stage) hBoxAlmacen.getScene().getWindow();
+        stage.close();
+        //Abrir nueva ventana
+		Parent root1 = FXMLLoader.load(getClass().getResource("/ule/inso1/data/interfaces/AlmacenInterfaz.fxml"));
+        Scene scene2 = new Scene(root1);
+        Stage satage = new Stage();
+        satage.setScene(scene2);
+        satage.show();
     }
 
     @FXML
