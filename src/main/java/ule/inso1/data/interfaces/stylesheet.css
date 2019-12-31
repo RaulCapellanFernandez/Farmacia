@@ -53,17 +53,6 @@
 	
 }
 
-.table{
-	-fx-background-color: #D3FFD0;
-	-fx-text-inner-color: white;
-	-fx-border-color: -fx-primarytext;
-	-fx-font-size: 13;
-	-fx-font-weight: bold;
-	-fx-border-width: 3px;
-	-fx-font-family: verdana;
-	
-}
-
 .labelTitle{
 	-fx-text-inner-color: white;
 	-fx-font-size: 18;
@@ -71,18 +60,7 @@
 	-fx-font-family: verdana;
 	
 }
-.table-view .column-header,
-.table-view .column-header-background .filler {
-    -fx-background-color:  #549764; 
-    -fx-border-color: #054400;
-    -fx-border-width: 3px;
-}
-.table-view .column-header .label{
-   -fx-text-fill: white;
-   -fx-font-weight: bold; 
-   -fx-alignment: CENTER;
-   
-}
+
 .labelSubTitle{
 	-fx-text-inner-color: #ffffff;
 	-fx-font-size: 20;
@@ -172,7 +150,8 @@
 .comboBox{
 	-fx-background-color: #AADFB1;
 	-fx-border-color : #02560E;
-}
+ 	-fx-font-family: verdana;
+ }
 
 .textField-Campos{
 	-fx-background-color: #AADFB1;
@@ -187,11 +166,22 @@
 	
 }
 .checkBox:selected .box {
-    -fx-background-color: #AADFB1;
+    -fx-background-color: #6CA573;
     -fx-border-color : #02560E;
 }
-
-
-
-
-
+.list-cell:filled:selected:focused, .list-cell:filled:selected {
+	-fx-background-color: #AADFB1;
+	-fx-border-color : #02560E;
+}
+.list-cell:even { /* <=== changed to even */
+    -fx-background-color: #AADFB1;
+    -fx-text-fill: black;
+    -fx-font-family: verdana;
+    
+}
+.list-cell { /* <=== changed to even */
+    -fx-background-color: #5CBB5C;
+    -fx-text-fill: black;
+    -fx-font-family: verdana;
+    
+}

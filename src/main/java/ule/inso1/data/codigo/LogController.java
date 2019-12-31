@@ -28,6 +28,8 @@ public class LogController {
 
     @FXML
     private Button logButton;
+    
+    static Empleado empleadoGlobal = new Empleado();
 
 
     @FXML
@@ -65,6 +67,8 @@ public class LogController {
     	for(int i  = 0;  i < empleadoLista.size(); i++) {
     		if(empleadoLista.get(i).getDni().equals(id)) {
     			if(empleadoLista.get(i).getContrasenia().contentEquals(contrasenia)) {
+    				//Visivilidad global del empleado
+    				empleadoGlobal = empleadoLista.get(i);
     				return true;
     			}
     		}

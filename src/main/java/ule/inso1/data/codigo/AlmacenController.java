@@ -259,7 +259,15 @@ public class AlmacenController implements Initializable{
     }
 
     @FXML
-    void clickhBoxrealizarVentas(MouseEvent event) {
+    void clickhBoxrealizarVentas(MouseEvent event) throws IOException {
+    	Stage stage = (Stage) hBoxAlmacen.getScene().getWindow();
+        stage.close();
+        //Abrir nueva ventana
+		Parent root1 = FXMLLoader.load(getClass().getResource("/ule/inso1/data/interfaces/RealizarVenta.fxml"));
+        Scene scene2 = new Scene(root1);
+        Stage satage = new Stage();
+        satage.setScene(scene2);
+        satage.show();
 
     }
     private void recargaComboBox() {
