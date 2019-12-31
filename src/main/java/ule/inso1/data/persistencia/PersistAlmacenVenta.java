@@ -1,10 +1,13 @@
 package ule.inso1.data.persistencia;
 
+import java.util.List;
+
 import javax.persistence.EntityManager;
 import javax.persistence.EntityManagerFactory;
 import javax.persistence.EntityTransaction;
 import javax.persistence.Persistence;
 
+import ule.inso1.data.entidades.Empleado;
 import ule.inso1.data.entidades.VentaAlmacen;
 
 public class PersistAlmacenVenta {
@@ -69,5 +72,14 @@ public class PersistAlmacenVenta {
 			em.close();
 			emf.close();
 		}
+	}
+	
+	public List<VentaAlmacen> recuperar() {
+		
+		emf = Persistence.createEntityManagerFactory("p-farmacia");
+		em = emf.createEntityManager();
+		List<VentaAlmacen> listaVAlmacen = (List<VentaAlmacen>) em.createQuery("FROM VentaAlmacen").getResultList();
+		return listaVAlmacen;
+
 	}
 }
