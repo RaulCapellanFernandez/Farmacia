@@ -1,0 +1,158 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import de.jensd.fx.glyphs.materialdesignicons.MaterialDesignIconView?>
+<?import java.lang.String?>
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.ComboBox?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.TableColumn?>
+<?import javafx.scene.control.TableView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.Pane?>
+<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.shape.Circle?>
+<?import javafx.scene.text.Font?>
+
+<AnchorPane minHeight="800.0" prefWidth="1000.0" xmlns="http://javafx.com/javafx/11.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="ule.inso1.data.codigo.RealizarVentaController">
+   <children>
+      <Pane prefHeight="800.0" prefWidth="1000.0" styleClass="root" stylesheets="@stylesheet.css">
+         <children>
+            <VBox prefHeight="800.0" prefWidth="314.0" styleClass="backgroundPrimary">
+               <children>
+                  <HBox prefHeight="100.0" prefWidth="200.0">
+                     <children>
+                        <Label fx:id="idNombre" styleClass="labelTitleFinal" text="Opciones" textFill="WHITE">
+                           <HBox.margin>
+                              <Insets left="20.0" top="20.0" />
+                           </HBox.margin>
+                        </Label>
+                        <MaterialDesignIconView fill="WHITE" glyphName="BOOK" size="80">
+                           <HBox.margin>
+                              <Insets left="20.0" top="10.0" />
+                           </HBox.margin>
+                        </MaterialDesignIconView>
+                     </children>
+                     <VBox.margin>
+                        <Insets bottom="50.0" />
+                     </VBox.margin>
+                  </HBox>
+                  <HBox fx:id="hBoxEmpleados" onMouseClicked="#clickhBoxEmpleados" prefHeight="58.0" prefWidth="314.0" styleClass="optionsHover">
+                     <children>
+                        <Label styleClass="labelSubTitle" text="Empleados" textFill="WHITE">
+                           <HBox.margin>
+                              <Insets left="20.0" top="10.0" />
+                           </HBox.margin>
+                        </Label>
+                        <MaterialDesignIconView fill="WHITE" glyphName="ACCOUNT" size="35">
+                           <HBox.margin>
+                              <Insets left="57.0" top="5.0" />
+                           </HBox.margin>
+                        </MaterialDesignIconView>
+                     </children>
+                     <VBox.margin>
+                        <Insets bottom="-50.0" />
+                     </VBox.margin>
+                  </HBox>
+                  <HBox fx:id="hBoxAlmacen" onMouseClicked="#clickhBoxAlmacen" prefHeight="52.0" prefWidth="314.0" styleClass="optionsHover">
+                     <children>
+                        <Label styleClass="labelSubTitle" text="Almacen" textFill="WHITE">
+                           <HBox.margin>
+                              <Insets left="20.0" top="10.0" />
+                           </HBox.margin>
+                        </Label>
+                        <MaterialDesignIconView fill="WHITE" glyphName="HOME" size="35">
+                           <HBox.margin>
+                              <Insets left="80.0" top="5.0" />
+                           </HBox.margin>
+                        </MaterialDesignIconView>
+                     </children>
+                     <VBox.margin>
+                        <Insets top="55.0" />
+                     </VBox.margin>
+                  </HBox>
+                  <HBox fx:id="hBoxVentas" onMouseClicked="#clickhBoxVentas" prefHeight="54.0" prefWidth="314.0" styleClass="optionsHover">
+                     <children>
+                        <Label styleClass="labelSubTitle" text="Ventas" textFill="WHITE">
+                           <HBox.margin>
+                              <Insets left="20.0" top="10.0" />
+                           </HBox.margin>
+                        </Label>
+                        <MaterialDesignIconView fill="WHITE" glyphName="STORE" size="35">
+                           <HBox.margin>
+                              <Insets left="100.0" top="5.0" />
+                           </HBox.margin>
+                        </MaterialDesignIconView>
+                     </children>
+                     <VBox.margin>
+                        <Insets top="5.0" />
+                     </VBox.margin>
+                  </HBox>
+                  <HBox fx:id="hBoxRealizarVentas" onMouseClicked="#clickhBoxrealizarVentas" prefHeight="51.0" prefWidth="314.0">
+                     <children>
+                        <Label styleClass="labelSubTitle" text="Realizar Venta" textFill="WHITE">
+                           <HBox.margin>
+                              <Insets left="20.0" top="10.0" />
+                           </HBox.margin>
+                        </Label>
+                        <MaterialDesignIconView fill="WHITE" glyphName="SHOPPING" size="35">
+                           <HBox.margin>
+                              <Insets left="15.0" top="5.0" />
+                           </HBox.margin>
+                        </MaterialDesignIconView>
+                     </children>
+                     <VBox.margin>
+                        <Insets top="5.0" />
+                     </VBox.margin>
+                     <styleClass>
+                        <String fx:value="optionsHover" />
+                        <String fx:value="selected" />
+                     </styleClass>
+                  </HBox>
+               </children>
+            </VBox>
+            <ComboBox fx:id="comboBox" layoutX="756.0" layoutY="310.0" prefHeight="29.0" prefWidth="222.0" styleClass="comboBox" />
+            <Button fx:id="buttonAniadir" layoutX="785.0" layoutY="365.0" mnemonicParsing="false" onMouseClicked="#clickAniadir" prefHeight="35.0" prefWidth="164.0" styleClass="boton-button" text="Añadir" textFill="WHITE">
+               <font>
+                  <Font name="System Bold" size="13.0" />
+               </font>
+            </Button>
+            <Button fx:id="buttonCancel" layoutX="611.0" layoutY="672.0" mnemonicParsing="false" onMouseClicked="#clickBorrar" prefHeight="58.0" prefWidth="122.0" styleClass="atras-button" text="Cancelar" textFill="WHITE">
+               <font>
+                  <Font name="System Bold" size="13.0" />
+               </font>
+            </Button>
+            <Button fx:id="buttonComprar" layoutX="377.0" layoutY="665.0" mnemonicParsing="false" onMouseClicked="#clickNuevo" prefHeight="58.0" prefWidth="122.0" styleClass="boton-button" text="Compar" textFill="WHITE">
+               <font>
+                  <Font name="System Bold" size="13.0" />
+               </font>
+            </Button>
+            <Label layoutX="377.0" layoutY="39.0" styleClass="labelTitleFinal" text="Realizar Venta" textFill="#656464">
+               <font>
+                  <Font name="System Bold" size="13.0" />
+               </font>
+            </Label>
+            <MaterialDesignIconView fill="#656464" glyphName="SHOPPING" layoutX="666.0" layoutY="86.0" size="90" />
+            <Button fx:id="buttonBorrar" layoutX="785.0" layoutY="435.0" mnemonicParsing="false" onMouseClicked="#clickBorrar" prefHeight="35.0" prefWidth="164.0" styleClass="atras-button" text="Borrar" textFill="WHITE">
+               <font>
+                  <Font name="System Bold" size="13.0" />
+               </font>
+            </Button>
+            <Circle fill="#c62d3c" layoutX="742.0" layoutY="82.0" radius="15.0" stroke="#8c898900" strokeType="INSIDE" />
+            <Label fx:id="labelItems" layoutX="737.0" layoutY="74.0" text="0" textFill="WHITE">
+               <font>
+                  <Font name="Verdana Bold" size="13.0" />
+               </font>
+            </Label>
+            <TableView fx:id="tableBuy" layoutX="330.0" layoutY="117.0" prefHeight="516.0" prefWidth="414.0" styleClass="table">
+              <columns>
+                <TableColumn fx:id="columnNombre" prefWidth="184.0" text="Nombre Producto" />
+                  <TableColumn fx:id="columnPrecio" prefWidth="76.0" text="Precio" />
+                  <TableColumn fx:id="columnEmpleado" prefWidth="142.0" text="Empleado" />
+              </columns>
+            </TableView>
+         </children>
+      </Pane>
+   </children>
+</AnchorPane>
