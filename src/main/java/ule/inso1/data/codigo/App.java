@@ -5,8 +5,10 @@ import java.util.List;
 
 import ule.inso1.data.entidades.Almacen;
 import ule.inso1.data.entidades.Empleado;
+import ule.inso1.data.entidades.Venta;
 import ule.inso1.data.persistencia.PersistAlmacen;
 import ule.inso1.data.persistencia.PersistEmpleado;
+import ule.inso1.data.persistencia.PersistVenta;
 
 /**
  * Hello world!
@@ -25,29 +27,28 @@ public class App
         empleado.setFechaContra(fecha);
         empleado.setAdmin(1);
         
-        
-        
         Almacen almacen = new Almacen();
         almacen.setCantidad(20);
         almacen.setIdAlmacen(5);
         almacen.setNombre("Condones");
         almacen.setPrecio(12.12);
         
-        PersistAlmacen pAlmacen = new PersistAlmacen();
-        pAlmacen.save(almacen);
+        Venta venta = new Venta();
+        venta.setEmpleado(empleado);
+        venta.setFechaVenta(fecha);
+        venta.setTotalVenta(12.12);
+       
         
-        List<Almacen> hola = pAlmacen.recuperar();
-        System.out.println(hola.get(0).getNombre());
+        /*PersistAlmacen pAlmacen = new PersistAlmacen();
+        pAlmacen.save(almacen);*/
+        
+       /* PersistEmpleado pEmpleado = new PersistEmpleado();
+        pEmpleado.save(empleado);*/
         
         
-        
-        //PersistEmpleado pEmpleado = new PersistEmpleado();
-        //pEmpleado.save(empleado);
-        //pEmpleado.remove(empleado);
-        
-        
-        
-       //List<Empleado> hola = pEmpleado.recuperar();
-        //System.out.println(hola.get(0).getDni());
+        PersistVenta pventa = new PersistVenta();
+        List<Venta> listaVentas = pventa.recuperar();
+        System.out.println(listaVentas.get(0).getTotalVenta());
+
     }
 }
