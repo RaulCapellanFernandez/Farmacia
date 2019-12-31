@@ -17,6 +17,9 @@ public class Almacen {
 	
 	@Column(name = "CANTIDAD")
 	private Integer cantidad;
+	
+	@Column(name = "PRECIO")
+	private double precio;
 
 	
 	//Getters y setters generados automaticamente
@@ -43,4 +46,14 @@ public class Almacen {
 	public void setCantidad(Integer cantidad) {
 		this.cantidad = cantidad;
 	}
+
+	public double getPrecio() {
+		return precio;
+	}
+
+	public void setPrecio(double precio) {
+		this.precio = precio;
+	}
+	
+	
 }

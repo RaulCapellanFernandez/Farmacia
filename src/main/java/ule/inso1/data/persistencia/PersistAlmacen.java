@@ -64,6 +64,7 @@ public class PersistAlmacen {
 			
 			actualizar.setNombre(almacen.getNombre());
 			actualizar.setCantidad(almacen.getCantidad());
+			actualizar.setPrecio(almacen.getPrecio());
 			
 			tx.commit();		
 		}catch(Exception e){

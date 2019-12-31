@@ -31,6 +31,7 @@ public class App
         almacen.setCantidad(20);
         almacen.setIdAlmacen(5);
         almacen.setNombre("Condones");
+        almacen.setPrecio(12.12);
         
         PersistAlmacen pAlmacen = new PersistAlmacen();
         pAlmacen.save(almacen);

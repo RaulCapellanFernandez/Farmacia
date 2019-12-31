@@ -75,6 +75,9 @@ public class AlmacenController implements Initializable{
 
     @FXML
     private TextField textFieldCantidad;
+    
+    @FXML 
+    private TextField textFieldPrecio;
 
     @FXML
     void clickAniadir(MouseEvent event) {
@@ -84,6 +87,7 @@ public class AlmacenController implements Initializable{
     			textFieldID.setText(listaAlmacen.get(i).getIdAlmacen().toString());
     			textFieldCantidad.setText(listaAlmacen.get(i).getCantidad().toString());
     			textFieldNombre.setText(listaAlmacen.get(i).getNombre());
+    			textFieldPrecio.setText(String.valueOf(listaAlmacen.get(i).getPrecio()));
     		}
     	}
     }
@@ -141,6 +145,17 @@ public class AlmacenController implements Initializable{
     					listaAlmacen.get(i).setCantidad(Integer.parseInt(textFieldCantidad.getText()));
     				if(!textFieldNombre.getText().isEmpty())
     					listaAlmacen.get(i).setNombre(textFieldNombre.getText());
+    				if(!textFieldPrecio.getText().isEmpty()) {
+    					if(textFieldPrecio.getText().contains(",")) {
+    						Alert alert = new Alert(AlertType.ERROR);
+			        		alert.setTitle("Mensaje de error");
+			        		alert.setHeaderText("Error al modificar producto");
+			        		alert.setContentText("Utiliza . en vez de ,");
+			        		alert.showAndWait();
+			        		return;
+    					}else
+    						listaAlmacen.get(i).setPrecio(Double.parseDouble(textFieldPrecio.getText()));
+    				}
     				pAlmacen.update(listaAlmacen.get(i));
     				System.out.println("hola");
     				recargaComboBox();
@@ -180,6 +195,18 @@ public class AlmacenController implements Initializable{
  
 	    	almacen.setIdAlmacen(Integer.parseInt(textFieldID.getText()));
 	    	almacen.setNombre(textFieldNombre.getText());
+	    	
+	    	if(!textFieldPrecio.getText().isEmpty()) {
+				if(textFieldPrecio.getText().contains(",")) {
+					Alert alert = new Alert(AlertType.ERROR);
+	        		alert.setTitle("Mensaje de error");
+	        		alert.setHeaderText("Error al modificar producto");
+	        		alert.setContentText("Utiliza . en vez de ,");
+	        		alert.showAndWait();
+	        		return;
+				}else
+					almacen.setPrecio(Double.parseDouble(textFieldPrecio.getText()));
+			}
 	    	
 	    	if(!textFieldCantidad.getText().isEmpty())
 	    		almacen.setCantidad(Integer.parseInt(textFieldCantidad.getText()));
