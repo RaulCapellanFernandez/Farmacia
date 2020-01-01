@@ -1,5 +1,6 @@
 package ule.inso1.data.persistencia;
 
+import java.util.Iterator;
 import java.util.List;
 
 import javax.persistence.EntityManager;
@@ -24,6 +25,8 @@ public class PersistAlmacenVenta {
 			tx.begin();
 			
 			em.persist(ventaAlmacen);
+			em.flush();
+			em.clear();
 			
 			tx.commit();		
 		}catch(Exception e){
@@ -82,4 +85,5 @@ public class PersistAlmacenVenta {
 		return listaVAlmacen;
 
 	}
+
 }

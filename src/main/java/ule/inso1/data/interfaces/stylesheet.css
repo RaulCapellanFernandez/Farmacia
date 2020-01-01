@@ -180,7 +180,7 @@
     
 }
 .list-cell { /* <=== changed to even */
-    -fx-background-color: #5CBB5C;
+    -fx-background-color: -fx-primary;
     -fx-text-fill: black;
     -fx-font-family: verdana;
     
