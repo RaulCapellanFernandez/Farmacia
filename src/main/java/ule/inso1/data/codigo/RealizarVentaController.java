@@ -1,5 +1,6 @@
 package ule.inso1.data.codigo;
 
+import java.io.IOException;
 import java.net.URL;
 import java.util.ArrayList;
 import java.util.Date;
@@ -9,17 +10,23 @@ import java.util.ResourceBundle;
 import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
 import javafx.fxml.FXML;
+import javafx.fxml.FXMLLoader;
 import javafx.fxml.Initializable;
+import javafx.scene.Parent;
+import javafx.scene.Scene;
+import javafx.scene.control.Alert;
 import javafx.scene.control.Button;
 import javafx.scene.control.ComboBox;
 import javafx.scene.control.Label;
 import javafx.scene.control.ListView;
 import javafx.scene.control.TableColumn;
 import javafx.scene.control.TableView;
+import javafx.scene.control.Alert.AlertType;
 import javafx.scene.control.cell.PropertyValueFactory;
 import javafx.scene.input.MouseEvent;
 import javafx.scene.layout.HBox;
 import javafx.scene.layout.VBox;
+import javafx.stage.Stage;
 import ule.inso1.data.entidades.Almacen;
 import ule.inso1.data.entidades.Venta;
 import ule.inso1.data.entidades.VentaAlmacen;
@@ -120,6 +127,7 @@ public class RealizarVentaController implements Initializable {
     	labelTotal.setText("Total................. "+totalCompra+"  €");
     	contador = 0;
     	labelItems.setText(contador.toString());
+    	listAlmacenPersistir.clear();
     }
 
     @FXML
@@ -134,36 +142,83 @@ public class RealizarVentaController implements Initializable {
     	venta.setEmpleado(LogController.empleadoGlobal);
     	venta.setFechaVenta(fecha);
     	venta.setTotalVenta(totalCompra);
-    	
-    	pVenta.save(venta);
-    	//Persistir cada producto de la compra
-    	List<Venta> listaVentaAux = pVenta.recuperar();
-		ventaAux = listaVentaAux.get(listaVentaAux.size()-1);
+    	if(listAlmacenPersistir.isEmpty()) {
+    		Alert alert = new Alert(AlertType.ERROR);
+    		alert.setTitle("Mensaje de error");
+    		alert.setHeaderText("Error en la compra");
+    		alert.setContentText("Introduce algun articulo en la cesta");
 
-		for(int i = 0; i < listAlmacenPersistir.size(); i++) {
+    		alert.showAndWait();
+    	}else {
+	    	pVenta.save(venta);
+	    	//Persistir cada producto de la compra
+	    	List<Venta> listaVentaAux = pVenta.recuperar();
+			ventaAux = listaVentaAux.get(listaVentaAux.size()-1);
+	
+			for(int i = 0; i < listAlmacenPersistir.size(); i++) {
+				
+				vAlmacenVenta = new VentaAlmacen();
+				vAlmacenVenta.setVenta(ventaAux);
+				vAlmacenVenta.setPrecioProd(listAlmacenPersistir.get(i).getPrecio());
+				vAlmacenVenta.setAlmacen(listAlmacenPersistir.get(i));
+				pAlmacenVenta.save(vAlmacenVenta);			
+			}
 			
-			vAlmacenVenta = new VentaAlmacen();
-			vAlmacenVenta.setVenta(ventaAux);
-			vAlmacenVenta.setPrecioProd(listAlmacenPersistir.get(i).getPrecio());
-			vAlmacenVenta.setAlmacen(listAlmacenPersistir.get(i));
-			pAlmacenVenta.save(vAlmacenVenta);			
-		}
+			
+			//Borra todo para realizar otra compra
+			listVenta.getItems().clear();
+	    	listVenta.getItems().add("	LISTA DE PRODUCTOS A COMPRAR");
+	    	totalCompra = 0;
+	    	labelTotal.setText("Total................. "+totalCompra+"  €");
+	    	contador = 0;
+	    	labelItems.setText(contador.toString());
+	    	listAlmacenPersistir.clear();
+	    	
+	    	//Mensaje de confirmacion
+	    	Alert alert = new Alert(AlertType.INFORMATION);
+	    	alert.setTitle("Mensaje de informacion");
+	    	alert.setHeaderText(null);
+	    	alert.setContentText("Compra realizada con exito");
+
+	    	alert.showAndWait();
+    	}
     }
 
+
+    @FXML
+    void clickhBoxAlmacen(MouseEvent event) throws IOException {
+    	Stage stage = (Stage) hBoxAlmacen.getScene().getWindow();
+        stage.close();
+        //Abrir nueva ventana
+		Parent root1 = FXMLLoader.load(getClass().getResource("/ule/inso1/data/interfaces/AlmacenInterfaz.fxml"));
+        Scene scene2 = new Scene(root1);
+        Stage satage = new Stage();
+        satage.setScene(scene2);
+        satage.show();
+    }
 
 	@FXML
-    void clickhBoxAlmacen(MouseEvent event) {
-
+    void clickhBoxEmpleados(MouseEvent event) throws IOException {
+    	Stage stage = (Stage) hBoxAlmacen.getScene().getWindow();
+        stage.close();
+        //Abrir nueva ventana
+		Parent root1 = FXMLLoader.load(getClass().getResource("/ule/inso1/data/interfaces/EmpleadoInterfaz.fxml"));
+        Scene scene2 = new Scene(root1);
+        Stage satage = new Stage();
+        satage.setScene(scene2);
+        satage.show();
     }
 
     @FXML
-    void clickhBoxEmpleados(MouseEvent event) {
-
-    }
-
-    @FXML
-    void clickhBoxVentas(MouseEvent event) {
-
+    void clickhBoxVentas(MouseEvent event) throws IOException {
+    	Stage stage = (Stage) hBoxAlmacen.getScene().getWindow();
+        stage.close();
+        //Abrir nueva ventana
+		Parent root1 = FXMLLoader.load(getClass().getResource("/ule/inso1/data/interfaces/Ventas.fxml"));
+        Scene scene2 = new Scene(root1);
+        Stage satage = new Stage();
+        satage.setScene(scene2);
+        satage.show();
     }
 
     @FXML
@@ -182,17 +237,3 @@ public class RealizarVentaController implements Initializable {
     }
 
 }
-
-
-
-
-
-
-
-
-
-
-
-
-
-

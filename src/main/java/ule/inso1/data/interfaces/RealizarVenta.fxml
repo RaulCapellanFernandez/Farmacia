@@ -144,7 +144,7 @@
                   <Font name="Verdana Bold" size="13.0" />
                </font>
             </Label>
-            <ListView fx:id="listVenta" layoutX="359.0" layoutY="112.0" prefHeight="429.0" prefWidth="357.0" styleClass="list-cell" stylesheets="@stylesheetList.css" />
+            <ListView fx:id="listVenta" layoutX="359.0" layoutY="112.0" prefHeight="429.0" prefWidth="357.0" styleClass="list-cell" />
             <Label fx:id="labelTotal" layoutX="359.0" layoutY="577.0" styleClass="labelTitleFinal" text="Total.................     €" textFill="#656464">
                <font>
                   <Font name="System Bold" size="13.0" />

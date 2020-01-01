@@ -1,8 +1,121 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
+<?import de.jensd.fx.glyphs.materialdesignicons.MaterialDesignIconView?>
+<?import java.lang.String?>
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.ListView?>
 <?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.Pane?>
+<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.text.Font?>
 
-<AnchorPane xmlns:fx="http://javafx.com/fxml/1">
-	<!-- TODO Add Nodes -->
+<AnchorPane minHeight="800.0" prefWidth="1000.0" xmlns="http://javafx.com/javafx/11.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="ule.inso1.data.codigo.VentaController">
+   <children>
+      <Pane prefHeight="800.0" prefWidth="1000.0" styleClass="root" stylesheets="@stylesheet.css">
+         <children>
+            <VBox prefHeight="800.0" prefWidth="314.0" styleClass="backgroundPrimary">
+               <children>
+                  <HBox prefHeight="100.0" prefWidth="200.0">
+                     <children>
+                        <Label fx:id="idNombre" styleClass="labelTitleFinal" text="Opciones" textFill="WHITE">
+                           <HBox.margin>
+                              <Insets left="20.0" top="20.0" />
+                           </HBox.margin>
+                        </Label>
+                        <MaterialDesignIconView fill="WHITE" glyphName="BOOK" size="80">
+                           <HBox.margin>
+                              <Insets left="20.0" top="10.0" />
+                           </HBox.margin>
+                        </MaterialDesignIconView>
+                     </children>
+                     <VBox.margin>
+                        <Insets bottom="50.0" />
+                     </VBox.margin>
+                  </HBox>
+                  <HBox fx:id="hBoxEmpleados" onMouseClicked="#clickhBoxEmpleados" prefHeight="58.0" prefWidth="314.0" styleClass="optionsHover">
+                     <children>
+                        <Label styleClass="labelSubTitle" text="Empleados" textFill="WHITE">
+                           <HBox.margin>
+                              <Insets left="20.0" top="10.0" />
+                           </HBox.margin>
+                        </Label>
+                        <MaterialDesignIconView fill="WHITE" glyphName="ACCOUNT" size="35">
+                           <HBox.margin>
+                              <Insets left="57.0" top="5.0" />
+                           </HBox.margin>
+                        </MaterialDesignIconView>
+                     </children>
+                     <VBox.margin>
+                        <Insets bottom="-50.0" />
+                     </VBox.margin>
+                  </HBox>
+                  <HBox fx:id="hBoxAlmacen" onMouseClicked="#clickhBoxAlmacen" prefHeight="52.0" prefWidth="314.0" styleClass="optionsHover">
+                     <children>
+                        <Label styleClass="labelSubTitle" text="Almacen" textFill="WHITE">
+                           <HBox.margin>
+                              <Insets left="20.0" top="10.0" />
+                           </HBox.margin>
+                        </Label>
+                        <MaterialDesignIconView fill="WHITE" glyphName="HOME" size="35">
+                           <HBox.margin>
+                              <Insets left="80.0" top="5.0" />
+                           </HBox.margin>
+                        </MaterialDesignIconView>
+                     </children>
+                     <VBox.margin>
+                        <Insets top="55.0" />
+                     </VBox.margin>
+                  </HBox>
+                  <HBox fx:id="hBoxVentas" onMouseClicked="#clickhBoxVentas" prefHeight="54.0" prefWidth="314.0">
+                     <children>
+                        <Label styleClass="labelSubTitle" text="Ventas" textFill="WHITE">
+                           <HBox.margin>
+                              <Insets left="20.0" top="10.0" />
+                           </HBox.margin>
+                        </Label>
+                        <MaterialDesignIconView fill="WHITE" glyphName="STORE" size="35">
+                           <HBox.margin>
+                              <Insets left="100.0" top="5.0" />
+                           </HBox.margin>
+                        </MaterialDesignIconView>
+                     </children>
+                     <VBox.margin>
+                        <Insets top="5.0" />
+                     </VBox.margin>
+                     <styleClass>
+                        <String fx:value="optionsHover" />
+                        <String fx:value="selected" />
+                     </styleClass>
+                  </HBox>
+                  <HBox fx:id="hBoxRealizarVentas" onMouseClicked="#clickhBoxrealizarVentas" prefHeight="51.0" prefWidth="314.0" styleClass="optionsHover">
+                     <children>
+                        <Label styleClass="labelSubTitle" text="Realizar Venta" textFill="WHITE">
+                           <HBox.margin>
+                              <Insets left="20.0" top="10.0" />
+                           </HBox.margin>
+                        </Label>
+                        <MaterialDesignIconView fill="WHITE" glyphName="SHOPPING" size="35">
+                           <HBox.margin>
+                              <Insets left="15.0" top="5.0" />
+                           </HBox.margin>
+                        </MaterialDesignIconView>
+                     </children>
+                     <VBox.margin>
+                        <Insets top="5.0" />
+                     </VBox.margin>
+                  </HBox>
+               </children>
+            </VBox>
+            <Label layoutX="377.0" layoutY="39.0" styleClass="labelTitleFinal" text="Lista Ventas" textFill="#656464">
+               <font>
+                  <Font name="System Bold" size="13.0" />
+               </font>
+            </Label>
+            <MaterialDesignIconView fill="#656464" glyphName="STORE" layoutX="666.0" layoutY="86.0" size="90" />
+            <ListView fx:id="listaVentas" layoutX="423.0" layoutY="145.0" prefHeight="525.0" prefWidth="486.0" styleClass="list-cell" />
+         </children>
+      </Pane>
+   </children>
 </AnchorPane>
-
