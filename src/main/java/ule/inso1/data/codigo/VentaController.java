@@ -10,8 +10,10 @@ import javafx.fxml.FXMLLoader;
 import javafx.fxml.Initializable;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
+import javafx.scene.control.Alert;
 import javafx.scene.control.Label;
 import javafx.scene.control.ListView;
+import javafx.scene.control.Alert.AlertType;
 import javafx.scene.input.MouseEvent;
 import javafx.scene.layout.HBox;
 import javafx.stage.Stage;
@@ -84,14 +86,22 @@ public class VentaController implements Initializable{
 
     @FXML
     void clickhBoxEmpleados(MouseEvent event) throws IOException {
-    	Stage stage = (Stage) hBoxAlmacen.getScene().getWindow();
-        stage.close();
-        //Abrir nueva ventana
-		Parent root1 = FXMLLoader.load(getClass().getResource("/ule/inso1/data/interfaces/EmpleadoInterfaz.fxml"));
-        Scene scene2 = new Scene(root1);
-        Stage satage = new Stage();
-        satage.setScene(scene2);
-        satage.show();
+    	if(LogController.empleadoGlobal.getAdmin() == 1) {
+			Stage stage = (Stage) hBoxAlmacen.getScene().getWindow();
+	        stage.close();
+	        //Abrir nueva ventana
+			Parent root1 = FXMLLoader.load(getClass().getResource("/ule/inso1/data/interfaces/EmpleadoInterfaz.fxml"));
+	        Scene scene2 = new Scene(root1);
+	        Stage satage = new Stage();
+	        satage.setScene(scene2);
+	        satage.show();
+		}else {
+			Alert alert = new Alert(AlertType.ERROR);
+    		alert.setTitle("Mensaje de error");
+    		alert.setHeaderText("Error en Empleados");
+    		alert.setContentText("Debe ser administrador para poder acceder");
+    		alert.showAndWait();
+		}
     }
 
     @FXML
