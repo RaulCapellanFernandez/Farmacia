@@ -21,7 +21,11 @@ import javafx.scene.input.MouseEvent;
 import javafx.scene.layout.HBox;
 import javafx.stage.Stage;
 import ule.inso1.data.entidades.Empleado;
+import ule.inso1.data.entidades.Venta;
+import ule.inso1.data.entidades.VentaAlmacen;
+import ule.inso1.data.persistencia.PersistAlmacenVenta;
 import ule.inso1.data.persistencia.PersistEmpleado;
+import ule.inso1.data.persistencia.PersistVenta;
 
 public class EmpleadosController implements Initializable{
 	
@@ -109,6 +113,7 @@ public class EmpleadosController implements Initializable{
 	    	for(int i  = 0; i < listaEmpleado.size(); i++) {
 	    		if(listaEmpleado.get(i).getDni().equals(textFieldDNI.getText())) {
 	    			System.out.println("------"+listaEmpleado.get(i).getDni());
+	    			borraVentas(listaEmpleado.get(i));
 	    			pEmpleado.remove(listaEmpleado.get(i));
 	    			recargaComboBox();
 	    			j= 0;
@@ -126,7 +131,32 @@ public class EmpleadosController implements Initializable{
     	}
     }
 
-    @FXML
+    private void borraVentas(Empleado empleado) {
+		PersistVenta pVentasBorrar = new PersistVenta();
+		List<Venta> listaVentasBorrar = pVentasBorrar.recuperar();
+		
+		for(int i = 0; i < listaVentasBorrar.size(); i++) {
+			if(listaVentasBorrar.get(i).getEmpleado().getDni().equals(empleado.getDni())) {
+				borrarAlmacenVentas(listaVentasBorrar.get(i));
+				pVentasBorrar.remove(listaVentasBorrar.get(i));
+			}
+		}
+		
+	}
+
+	private void borrarAlmacenVentas(Venta venta) {
+		PersistAlmacenVenta pAlmacenVentaBorrar = new PersistAlmacenVenta();
+		List<VentaAlmacen> listaVentaAlmacen = pAlmacenVentaBorrar.recuperar();
+		
+		for(int i = 0; i < listaVentaAlmacen.size(); i++) {
+			if(listaVentaAlmacen.get(i).getVenta().getEmpleado().getDni().equals(venta.getEmpleado().getDni())) {
+				pAlmacenVentaBorrar.remove(listaVentaAlmacen.get(i));
+			}
+		}
+		
+	}
+
+	@FXML
     void clickModificar(MouseEvent event) {
     	int j  = 1;
     	System.out.println("MODIFICA");
