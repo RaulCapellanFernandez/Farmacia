@@ -23,7 +23,12 @@ import javafx.scene.input.MouseEvent;
 import javafx.scene.layout.HBox;
 import javafx.stage.Stage;
 import ule.inso1.data.entidades.Almacen;
+import ule.inso1.data.entidades.Empleado;
+import ule.inso1.data.entidades.Venta;
+import ule.inso1.data.entidades.VentaAlmacen;
 import ule.inso1.data.persistencia.PersistAlmacen;
+import ule.inso1.data.persistencia.PersistAlmacenVenta;
+import ule.inso1.data.persistencia.PersistVenta;
 
 public class AlmacenController implements Initializable{
 
@@ -102,8 +107,9 @@ public class AlmacenController implements Initializable{
 	    	for(int i = 0; i < listaAlmacen.size(); i++) {
 	    		if(textFieldID.getText().equals(listaAlmacen.get(i).getIdAlmacen().toString())) {
 	    			if(textFieldNombre.getText().equals(listaAlmacen.get(i).getNombre())){
+	    				borrarAlmacenVentas(listaAlmacen.get(i));
 	    				pAlmacen.remove(listaAlmacen.get(i));
-	    				System.out.println(listaAlmacen.get(i).getIdAlmacen());
+	    				//System.out.println(listaAlmacen.get(i).getIdAlmacen());
 	    				recargaComboBox();
 	    				j=0;
 	    			}
@@ -120,6 +126,17 @@ public class AlmacenController implements Initializable{
     		alert.showAndWait();
     	}
     }
+
+	private void borrarAlmacenVentas(Almacen almacen) {
+		PersistAlmacenVenta pAlmacenVentaBorrar = new PersistAlmacenVenta();
+		List<VentaAlmacen> listaVentaAlmacen = pAlmacenVentaBorrar.recuperar();
+		
+		for(int i = 0; i < listaVentaAlmacen.size(); i++) {
+			if(listaVentaAlmacen.get(i).getAlmacen().getIdAlmacen().equals(almacen.getIdAlmacen())) {
+				pAlmacenVentaBorrar.remove(listaVentaAlmacen.get(i));
+			}
+		}
+	}
 
     @FXML
     void clickModificar(MouseEvent event) {
