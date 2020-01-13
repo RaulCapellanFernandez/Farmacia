@@ -70,6 +70,9 @@ public class EmpleadosController implements Initializable{
 
     @FXML
     private Button buttonNuevo;
+    
+    @FXML
+    private Button buttonCerrarSesion;
 
     @FXML
     private TextField textFieldDNI;
@@ -86,6 +89,18 @@ public class EmpleadosController implements Initializable{
     @FXML
     private CheckBox checkBoxAdmin;
 
+    @FXML
+    void clickCerrarSesion(MouseEvent event) throws IOException {
+    	Stage stage = (Stage) hBoxAlmacen.getScene().getWindow();
+        stage.close();
+        //Abrir nueva ventana
+		Parent root1 = FXMLLoader.load(getClass().getResource("/ule/inso1/data/interfaces/Loggin.fxml"));
+        Scene scene2 = new Scene(root1);
+        Stage satage = new Stage();
+        satage.setScene(scene2);
+        satage.show();
+    }
+    
     @FXML
     void clickAniadir(MouseEvent event) {
     	System.out.println(comboBox.getSelectionModel().getSelectedItem());

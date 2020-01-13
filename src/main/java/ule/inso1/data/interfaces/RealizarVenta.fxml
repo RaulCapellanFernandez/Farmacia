@@ -109,6 +109,18 @@
                         <String fx:value="selected" />
                      </styleClass>
                   </HBox>
+                  <VBox prefHeight="418.0" prefWidth="314.0">
+                     <children>
+                        <Button fx:id="buttonCerrarSesion" mnemonicParsing="false" onMouseClicked="#clickCerrarSesion" prefHeight="47.0" prefWidth="170.0" styleClass="atras-button" text="Cerrar Sesion" textFill="WHITE">
+                           <font>
+                              <Font name="System Bold" size="13.0" />
+                           </font>
+                           <VBox.margin>
+                              <Insets left="70.0" top="300.0" />
+                           </VBox.margin>
+                        </Button>
+                     </children>
+                  </VBox>
                </children>
             </VBox>
             <ComboBox fx:id="comboBox" layoutX="756.0" layoutY="310.0" prefHeight="29.0" prefWidth="222.0" styleClass="comboBox" />

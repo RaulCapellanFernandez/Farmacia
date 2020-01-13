@@ -80,6 +80,10 @@ public class RealizarVentaController implements Initializable {
 
     @FXML
     private Button buttonBorrar;
+    
+    @FXML
+    private Button buttonCerrarSesion;
+
 
     @FXML
     private Label labelItems;
@@ -94,6 +98,18 @@ public class RealizarVentaController implements Initializable {
     private double totalCompra = 0;
     private ArrayList<Almacen> listAlmacenPersistir = new ArrayList<Almacen>();
     PersistAlmacenVenta pAlmacenVenta = new PersistAlmacenVenta();
+    
+    @FXML
+    void clickCerrarSesion(MouseEvent event) throws IOException {
+    	Stage stage = (Stage) hBoxAlmacen.getScene().getWindow();
+        stage.close();
+        //Abrir nueva ventana
+		Parent root1 = FXMLLoader.load(getClass().getResource("/ule/inso1/data/interfaces/Loggin.fxml"));
+        Scene scene2 = new Scene(root1);
+        Stage satage = new Stage();
+        satage.setScene(scene2);
+        satage.show();
+    }
     
     @FXML
     void clickAniadir(MouseEvent event) {
